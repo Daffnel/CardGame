@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CardGame</string>
+    <string name="backgroun_picture">Backgroun picture</string>
+    <string name="logotype">Logotype</string>
+</resources>

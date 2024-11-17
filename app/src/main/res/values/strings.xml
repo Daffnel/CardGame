@@ -2,4 +2,7 @@
     <string name="app_name">CardGame</string>
     <string name="backgroun_picture">Backgroun picture</string>
     <string name="logotype">Logotype</string>
+    <string name="start_new_game">Start new game</string>
+    <string name="join_the_fizz_club">Join the fizz club</string>
+    <string name="about_the_game">About the Game</string>
 </resources>

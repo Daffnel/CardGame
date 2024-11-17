@@ -20,27 +20,85 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"/>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="-60dp">
+
+        <Button
+            android:id="@+id/btNewGame"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:elevation="@dimen/cardview_default_radius"
+            android:text="@string/start_new_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.577"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <Button
+            android:id="@+id/btAboutTheGame"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/about_the_game"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.577"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btJoinFizzClub"
+            app:layout_constraintVertical_bias="0.009" />
+
+        <Button
+            android:id="@+id/btJoinFizzClub"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="184dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/join_the_fizz_club"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.577"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btNewGame" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="429dp"
+            android:layout_height="330dp"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/logotype"
+            android:src="@drawable/logotype"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.087"
+            tools:ignore="ImageContrastCheck" />
 
 
-    <ImageView
-        android:layout_width="375dp"
-        android:layout_height="239dp"
-        android:layout_gravity="center_horizontal"
-        android:contentDescription="@string/logotype"
-        android:src="@drawable/logotype"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.083"
-        tools:ignore="ImageContrastCheck" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="319dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="131dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

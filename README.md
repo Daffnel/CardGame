@@ -1,7 +1,7 @@
 # CardGame
 Card game for Android
 
-a simple card game where the user has to guess whether the next card is higher or lower than the card shown
+A card game where the user has to guess whether the next card is higher or lower than the card shown
 
 
 The focus is on making the design and game routine work. If there is time left, I will try to build further with different functions

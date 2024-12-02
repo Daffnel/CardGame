@@ -28,6 +28,10 @@ class MainActivity : AppCompatActivity() {
 
         deck1.randomizeCards()
 
+        deck1.getCardName(2)
+
+        deck1.getCardName(48)
+
 
 
         newGameButton.setOnClickListener {

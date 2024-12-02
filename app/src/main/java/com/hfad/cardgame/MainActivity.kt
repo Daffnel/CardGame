@@ -2,6 +2,7 @@ package com.hfad.cardgame
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +23,12 @@ class MainActivity : AppCompatActivity() {
         val newGameButton = findViewById<Button>(R.id.btNewGame)
 
 
-        val deck1: Cards = Cards()
+
+        var deck1: Cards = Cards()
+
+        deck1.randomizeCards()
+
+
 
         newGameButton.setOnClickListener {
 

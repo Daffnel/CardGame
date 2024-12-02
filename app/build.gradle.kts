@@ -4,6 +4,12 @@ plugins {
 }
 
 android {
+    buildFeatures {
+
+        dataBinding = true
+        viewBinding = true
+
+    }
     namespace = "com.hfad.cardgame"
     compileSdk = 35
 
@@ -36,7 +42,7 @@ android {
 }
 
 dependencies {
-
+    
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

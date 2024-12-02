@@ -5,6 +5,8 @@ import kotlin.random.Random
 
 class Cards {
 
+    var  randomizedDeck = mutableSetOf<Int>()
+
     val deck = mapOf(1 to "ace_of_spades",2 to "two_of_spades",3 to "three_of_spades",4 to "Four_of_spades",
         5 to "five_of_spades",6 to "six_of_spades",7 to "seven_of_spades",8 to "eight_of_spades",
         9 to "nine_of_spades",10 to "ten_of_spades",11 to "jack_of_spades",12 to "queen_of_spades",
@@ -21,17 +23,26 @@ class Cards {
         52 to "king_of_clubs")
 
 
+    //Todo  Skapa en "blandad kortlek i en lista
+    //Todo  sedan en lista över kort som är förbrukade
 
-    /*randomize a number an number between 0 and 52 check if that card is playable */
 
+    /**
+     * Makes a random deck of 52 cards. The numbers value is equalent in dack list
+     */
     fun randomizeCards() {
 
-        val randCard = Random.nextInt(1, 53)
+        //rndCard = Random.nextInt(1, 53)
 
-        if(deck.containsKey(randCard))
-            Log.d("!!!", deck[randCard].toString())
+        randomizedDeck.clear() //clears the current deck
+
+        while(randomizedDeck.size < 52){
+
+
+
+
+        }
+
 
     }
-
-
 }

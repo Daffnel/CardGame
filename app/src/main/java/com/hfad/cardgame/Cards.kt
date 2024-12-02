@@ -62,7 +62,9 @@ class Cards {
             return card.toString()
         }
 
+    fun  usedCards(number: Int) {
 
-
+     randomizedDeck.remove(number)
+    }
 
 }

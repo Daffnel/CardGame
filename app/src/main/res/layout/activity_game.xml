@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageView
+    android:id="@+id/backgroundPicture"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:contentDescription="@string/backgroun_picture"
+    android:scaleType="centerCrop"
+    android:src="@drawable/izzyfizzybackground"
+    tools:ignore="ImageContrastCheck"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="8dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</FrameLayout>

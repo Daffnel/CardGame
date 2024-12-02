@@ -6,6 +6,7 @@ import kotlin.random.Random
 class Cards {
 
     var  randomizedDeck = mutableSetOf<Int>()
+    var  usedCards = mutableSetOf<Int>()
 
     val deck = mapOf(1 to "ace_of_spades",2 to "two_of_spades",3 to "three_of_spades",4 to "Four_of_spades",
         5 to "five_of_spades",6 to "six_of_spades",7 to "seven_of_spades",8 to "eight_of_spades",
@@ -28,21 +29,40 @@ class Cards {
 
 
     /**
-     * Makes a random deck of 52 cards. The numbers value is equalent in dack list
+     * Makes a random deck of 52 cards. The numbers value is equalent in deck list
      */
     fun randomizeCards() {
-
-        //rndCard = Random.nextInt(1, 53)
 
         randomizedDeck.clear() //clears the current deck
 
         while(randomizedDeck.size < 52){
+            val randomCardNo = Random.nextInt(1, 53)
+            if(!randomizedDeck.contains(randomCardNo)){                     //Card do not exist, add to deck
+                randomizedDeck.add(randomCardNo)
+            }
+            else{
+                // Do nothing card already exists
+            }
+        }
 
+            //TODO remove check that we a deck of cards
+            randomizedDeck.forEachIndexed { index, element ->
+            Log.d("!cards.kt", "Element at index $index: $element")
+        }
 
+    }
 
+    /**
+     *  Get the correct name for the card by its number
+     */
+    fun  getCardName(number: Int): String{
 
+            val card: String? = deck[number]
+
+            return card.toString()
         }
 
 
-    }
+
+
 }

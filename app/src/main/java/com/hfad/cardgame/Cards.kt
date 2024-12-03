@@ -24,6 +24,21 @@ class Cards {
         48 to "nine_of_clubs",49 to "ten_of_clubs",50 to "jack_of_clubs",51 to "queen_of_clubs",
         52 to "king_of_clubs")
 
+    val deckImgaesRef = mapOf(1 to "R.drawable.ace_of_spades",2 to "R.drawable.two_of_spades",3 to "R.drawable.three_of_spades",4 to "R.drawable.Four_of_spades",
+        5 to "R.drawable.five_of_spades",6 to "R.drawable.six_of_spades",7 to "R.drawable.seven_of_spades",8 to "R.drawable.eight_of_spades",
+        9 to "R.drawable.nine_of_spades",10 to "R.drawable.ten_of_spades",11 to "R.drawable.jack_of_spades",12 to "R.drawable.queen_of_spades",
+        13 to "R.drawable.king_of_spades",14 to "R.drawable.ace_of_hearts",15 to "R.two_of_hearts",16 to "R.drawable.three_of_hearts",
+        17 to "R.drawable.Four_of_hearts",18 to "R.drawable.five_of_hearts",19 to "R.drawable.six_of_hearts",20 to "R.drawable.seven_of_hearts",
+        21 to "R.drawable.eight_of_hearts",22 to "R.drawable.nine_of_hearts",23 to "R.drawable.ten_of_hearts",24 to "R.drawable.jack_of_hearts",
+        25 to "R.drawable.queen_of_hearts",26 to "R.drawable.king_of_hearts",27 to "R.drawable.ace_of_diamonds",28 to "R.drawable.two_of_diamonds",
+        29 to "R.drawable.three_of_diamonds",30 to "R.drawable.Four_of_diamonds", 31 to "R.drawable.five_of_diamonds",32 to "R.drawable.six_of_diamonds",
+        33 to "R.drawable.seven_of_diamonds",34 to "R.drawable.eight_of_diamonds",35 to "R.drawable.nine_of_diamonds",36 to "R.drawable.ten_of_diamonds",
+        37 to "R.drawable.jack_of_diamonds",38 to "R.drawable.queen_of_diamonds",39 to "R.drawable.king_of_diamonds",40 to "R.drawable.ace_of_clubs",
+        41 to "R.drawable.two_of_clubs",42 to "R.drawable.three_of_clubs",43 to "R.drawable.Four_of_clubs",
+        44 to "R.drawable.five_of_clubs",45 to "R.drawable.six_of_clubs",46 to "R.drawable.seven_of_clubs",47 to "R.drawable.eight_of_clubs",
+        48 to "R.drawable.nine_of_clubs",49 to "R.drawable.ten_of_clubs",50 to "R.drawable.jack_of_clubs",51 to "R.drawable.queen_of_clubs",
+        52 to "R.drawable.king_of_clubs")
+
 
     //Todo  Skapa en "blandad kortlek i en lista
     //Todo  sedan en lista över kort som är förbrukade

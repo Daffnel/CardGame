@@ -28,8 +28,8 @@
      <androidx.fragment.app.FragmentContainerView
          android:id="@+id/fragmentContainerView2"
          android:name="com.hfad.cardgame.CardsFragment"
-         android:layout_width="379dp"
-         android:layout_height="567dp"
+         android:layout_width="394dp"
+         android:layout_height="718dp"
          app:layout_constraintBottom_toBottomOf="parent"
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"

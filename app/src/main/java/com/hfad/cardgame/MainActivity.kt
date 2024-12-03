@@ -2,12 +2,9 @@ package com.hfad.cardgame
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,13 +21,13 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        var deck1: Cards = Cards()
+      /*  var deck1: Cards = Cards()
 
         deck1.randomizeCards()
 
         deck1.getCardName(2)
 
-        deck1.getCardName(48)
+        deck1.getCardName(48)*/
 
 
 

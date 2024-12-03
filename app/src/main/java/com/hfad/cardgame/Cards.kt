@@ -7,6 +7,7 @@ class Cards {
 
     var  randomizedDeck = mutableSetOf<Int>()
     var  usedCards = mutableSetOf<Int>()
+    var currentCard: Int = 0
 
     val deck = mapOf(1 to "ace_of_spades",2 to "two_of_spades",3 to "three_of_spades",4 to "Four_of_spades",
         5 to "five_of_spades",6 to "six_of_spades",7 to "seven_of_spades",8 to "eight_of_spades",
@@ -62,7 +63,9 @@ class Cards {
             return card.toString()
         }
 
+    fun  usedCards(number: Int) {
 
-
+     randomizedDeck.remove(number)
+    }
 
 }

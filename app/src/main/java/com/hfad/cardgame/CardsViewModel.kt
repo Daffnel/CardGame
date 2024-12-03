@@ -6,14 +6,8 @@ import androidx.lifecycle.ViewModel
 
 class CardsViewModel: ViewModel() {
 
-    init{
-        var deck1: Cards = Cards()  //create a new shuffled deck
-        deck1.randomizeCards()
-    }
-
-var currentImage = MutableLiveData<Int>()
-
-var cardCountNr: Int = 0 //  keep track which card is in play
+    private lateinit var deck1: Cards
+    var cardCountNr: Int = 0 //  keep track which card is in play
 
 init{
     var deck1: Cards = Cards()  //create a new shuffled deck
@@ -21,18 +15,17 @@ init{
 }
 
 
+    var currentImage = MutableLiveData<Int>()
+   val cardImages = deck1.deckImgaesRef
 
-    //Set live data to observe button actions
 
-    private val _data = MutableLiveData<String>()
-    val data: LiveData<String> get() = _data
 
-    fun updateData(newData: String) {
-       if(newData == "Higher"){
-           _data.value = newData
-       }
-        _data.value = newData
-    }
+
+/*fun showNextCard(){
+
+    currentImage.value = cardImages[cardCountNr]?.toInt()
+
+}*/
 
 
 

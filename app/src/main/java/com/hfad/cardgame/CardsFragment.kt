@@ -48,21 +48,18 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
         val image: Int = R.drawable.ace_of_hearts
 
        //live  data to change imageview
-        viewModel.data.observe(viewLifecycleOwner, Observer { newData ->
-            // Uppdatera UI med den nya datan
-            binding.ivCard.setImageResource(R.drawable.king_of_clubs2)
-        })
+
 
         binding.ivCard.setImageResource(image)
 
         binding.btnLower.setOnClickListener {
-            viewModel.updateData("Lower")
+
             // Lägg till funktionalitet för btnLower här
             Toast.makeText(context, "Lower button clicked", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnHigher.setOnClickListener {
-            viewModel.updateData("Higher")
+
             // Lägg till funktionalitet för btnHigher här
             Toast.makeText(context, "Higher button clicked", Toast.LENGTH_SHORT).show()
         }

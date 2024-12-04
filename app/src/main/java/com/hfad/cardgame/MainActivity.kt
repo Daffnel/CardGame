@@ -6,15 +6,17 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var userNameTextView: TextView
 
-   object Game2Singelton {
-       var game2 = Game("Bosse black ace")
+    object Game2Singelton {
+       var game2 = Game("")
    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
         val newGameButton = findViewById<Button>(R.id.btNewGame)
         val loginButton = findViewById<Button>(R.id.btUserName)
+        userNameTextView = findViewById<TextView>(R.id.tvUserName)
+
 
 
 
@@ -41,11 +45,8 @@ class MainActivity : AppCompatActivity() {
 
             loginPopUp()
 
-            Game2Singelton.game2.points++
-            Log.d("!!!", "${Game2Singelton.game2.points}")
-            Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show()
-        }
 
+        }
 
 
 
@@ -62,17 +63,27 @@ fun loginPopUp(){
     val buttonOK = userNameForm.findViewById<Button>(R.id.btOk)
     val userName = userNameForm.findViewById<EditText>(R.id.etUserName)
 
+
     userNameForm.show()
+
+
 
     buttonOK.setOnClickListener {
 
+
         Game2Singelton.game2.player = userName.text.toString()
-        Toast.makeText(this, "Button clicked", Toast.LENGTH_SHORT).show()
+
+        updateName(userName.text.toString())
 
         userNameForm.dismiss()
+
     }
 
+    //name.text = "hello"
 }
 
+    fun updateName(userName: String){
+        this.userNameTextView.text =  "hello my friend " + userName
+     }
 
 }

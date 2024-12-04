@@ -15,4 +15,5 @@
     <string name="next_card_higher_or_lower_value">Next Card higher or lower?</string>
     <string name="namn">Gamer name:</string>
     <string name="ok">OK</string>
+    <string name="not_logged_in_yet">Not logged in yet</string>
 </resources>

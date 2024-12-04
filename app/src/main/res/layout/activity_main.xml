@@ -50,16 +50,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.577"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btJoinFizzClub"
+            app:layout_constraintTop_toBottomOf="@+id/btUserName"
             app:layout_constraintVertical_bias="0.009" />
 
         <Button
-            android:id="@+id/btJoinFizzClub"
+            android:id="@+id/btUserName"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="184dp"
             android:layout_height="48dp"
             android:layout_marginTop="20dp"
-            android:text="@string/join_the_fizz_club"
+            android:text="@string/logga_in"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.577"
             app:layout_constraintStart_toStartOf="parent"

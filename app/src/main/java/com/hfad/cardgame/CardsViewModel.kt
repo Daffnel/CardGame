@@ -12,14 +12,13 @@ class CardsViewModel : ViewModel() {
     val answerImage = MutableLiveData<Int>()
     val answerText = MutableLiveData<String>()
     private val deck1 = Cards()
+    val game = Game("Hasse korthaj")
     val cardImages = deck1.deckImageRef
     val cards = deck1.randomizedDeck
 
 
 
-    var NoGuesses = 0
-    var correctGuesses = 0
-    var wrongGuesses = 0
+
 
     var cardCount = 0                       //kortleken startar på 0?
 
@@ -60,31 +59,27 @@ class CardsViewModel : ViewModel() {
 
             if (hiLoButton == "HI") {
                 if (firstCardInStack <= secondCardInStack) {   //equals makes a right answer
-                    Log.d("CardsViewModel", "HI Rätt")
-                    correctGuesses++
+                    game.correctGuesses++
                     showAnswerImage(true)
                 } else {
-                    Log.d("CardsViewModel", "HI fel")
-                    wrongGuesses++
+                    game.wrongGuesses++
                     showAnswerImage(false)
                 }
             }
             if (hiLoButton == "LO") {
                 if (firstCardInStack >= secondCardInStack) {
-                    Log.d("CardsViewModel", "LO Rätt")
-                    correctGuesses++
+                   game.correctGuesses++
                     showAnswerImage(true)
                 } else {
-                    Log.d("CardsViewModel", "LO fel")
-                    wrongGuesses++
+                    game.wrongGuesses++
                     showAnswerImage(false)
                 }
             }
             showCard()
+            game.NoGuesses++
         }
 
         fun buttonHigh() {
-
             checkGuesses("HI")
 
         }

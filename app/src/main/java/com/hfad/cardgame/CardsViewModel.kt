@@ -10,6 +10,7 @@ class CardsViewModel : ViewModel() {
 
     val currentCard = MutableLiveData<Int>()
     val answerImage = MutableLiveData<Int>()
+    val answerText = MutableLiveData<String>()
     private val deck1 = Cards()
     val cardImages = deck1.deckImageRef
     val cards = deck1.randomizedDeck
@@ -30,20 +31,26 @@ class CardsViewModel : ViewModel() {
         currentCard.value = cardImages[cards.indexOf(cardCount)]
         cardCount++
 
-        //Log.d("CardsViewModel","Current card is ${deck1.convertNumber(cards.indexOf(cardCount))}")
+
 
     }
 
-
+    /***
+     * Change the icon depending on the answer
+     */
     fun showAnswerImage(answer: Boolean) {
 
         when (answer) {
-            true ->  answerImage.value = R.drawable.right_answer
-            false -> answerImage.value = R.drawable.wrong_answer
+            true -> {
+                answerImage.value = R.drawable.right_answer
+                answerText.value = "CORRECT ANSWER"
+                }
+            false ->{ answerImage.value = R.drawable.wrong_answer
+                answerText.value = "WRONG ANSWER"}
         }
         }
 
-        fun checkGuesses(hiLoButton: String): Boolean {  // HI = for high button LO= for low button Return Boolean for right or wrong answer
+        fun checkGuesses(hiLoButton: String) {  // HI = for high button LO= for low button Return Boolean for right or wrong answer
 
             val firstCardInStack =
                 deck1.convertNumber(cards.indexOf(cardCount - 1)) //-1 because showCard() is one card ahead
@@ -55,28 +62,25 @@ class CardsViewModel : ViewModel() {
                 if (firstCardInStack <= secondCardInStack) {   //equals makes a right answer
                     Log.d("CardsViewModel", "HI Rätt")
                     correctGuesses++
-                    answer = true
                     showAnswerImage(true)
                 } else {
                     Log.d("CardsViewModel", "HI fel")
                     wrongGuesses++
                     showAnswerImage(false)
-                    answer = false
                 }
             }
             if (hiLoButton == "LO") {
                 if (firstCardInStack >= secondCardInStack) {
                     Log.d("CardsViewModel", "LO Rätt")
                     correctGuesses++
-                    answer = true
+                    showAnswerImage(true)
                 } else {
                     Log.d("CardsViewModel", "LO fel")
                     wrongGuesses++
-                    answer = false
+                    showAnswerImage(false)
                 }
             }
             showCard()
-            return answer
         }
 
         fun buttonHigh() {

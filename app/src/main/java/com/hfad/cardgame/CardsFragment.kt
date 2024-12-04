@@ -1,5 +1,6 @@
 package com.hfad.cardgame
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -46,6 +47,7 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
     }
 
 
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
@@ -59,6 +61,14 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
         viewModel.answerImage.observe(viewLifecycleOwner, Observer { cardResId ->
             cardResId?.let {
                 binding.ivRightOrWrongAnswer.setImageResource(it)
+
+            }
+        })
+
+        viewModel.answerText.observe(viewLifecycleOwner, Observer { newText ->
+            newText?.let {
+                binding.tvAnswer.text = it
+
             }
         })
 

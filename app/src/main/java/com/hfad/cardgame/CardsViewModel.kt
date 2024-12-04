@@ -6,9 +6,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlin.random.Random
 
-class CardsViewModel: ViewModel() {
+class CardsViewModel : ViewModel() {
 
-     val currentCard = MutableLiveData<Int>()
+    val currentCard = MutableLiveData<Int>()
     private val deck1 = Cards()
     val cardImages = deck1.deckImageRef
     val cards = deck1.randomizedDeck
@@ -27,54 +27,44 @@ class CardsViewModel: ViewModel() {
 
     }
 
-    fun checkGuesses(answer: String): Boolean{  // HI = for high button LO= for low button Return Boolean for right or wrong answer
+    fun checkGuesses(hiLoButton: String): Boolean {  // HI = for high button LO= for low button Return Boolean for right or wrong answer
 
-       // val singleNumber = deck1.convertNumber(cards.indexOf(cardCount))[cardCount]
+        val firstCardInStack = deck1.convertNumber(cards.indexOf(cardCount - 1)) //-1 because showCard() is one card ahead
+        val secondCardInStack = deck1.convertNumber(cards.indexOf(cardCount))
 
-        val firstValueToCompare = deck1.convertNumber(cards.indexOf(cardCount))
-        val secondValueToCompare = deck1.convertNumber(cards.indexOf(cardCount+1))
+        var answer = false
 
-        //val firstValueToCompare = deck1.convertNumber(cards.indexOf(cardCount))
-        //val secondValueToCompare = deck1.convertNumber(cards.indexOf(cardCount+1))
-
-        Log.d("CardsViewModel","cartd count $cardCount Första värdet $firstValueToCompare och andra värdet $secondValueToCompare")
-        Log.d("CardsViewModel","Svar $answer")
-        Log.d("CardsViewModel","{$cards.indexOf(cardCount+1)}")
-        Log.d("CardsViewModel","{$cards.indexOf(cardCount)}")
-        when(answer){
-
-            "HI" -> {if( secondValueToCompare > firstValueToCompare){
-                Log.d("CardsViewModel","Rätt gissat")
-                return true
+        if (hiLoButton == "HI") {
+            if (firstCardInStack <= secondCardInStack) {   //equals makes a right answer
+                Log.d("CardsViewModel", "HI Rätt")
+                answer = true
             } else {
-                Log.d("CardsViewModel","Fel gissat")
-            }}
-
-            "LO" -> {if( secondValueToCompare < firstValueToCompare){
-                Log.d("CardsViewModel","Rätt gissat")
-                return true
-            } else {
-                Log.d("CardsViewModel","Fel gissat")
-
-            }}
-
-            else -> {
-                Log.d("CardsViewModel","Här ska vu inte hamna")
+                Log.d("CardsViewModel", "HI fel")
+                answer = false
             }
         }
-
-        return false
+        if (hiLoButton == "LO") {
+            if (firstCardInStack >= secondCardInStack) {
+                Log.d("CardsViewModel", "LO Rätt")
+                answer = true
+            } else {
+                Log.d("CardsViewModel", "LO fel")
+                answer = false
+            }
+        }
+        showCard()
+        return answer
     }
+        fun buttonHigh() {
 
-    fun buttonHigh(){
-//Log.d("CardsViewModel","HI button tryckt")
-checkGuesses("HI")
+            checkGuesses("HI")
+
+        }
+
+        fun buttonLow() {
+
+            checkGuesses("LO")
+        }
+
 
     }
-fun buttonLow(){
-//Log.d("CardsViewModel","LO button tryckt")
-    checkGuesses("LO")
-}
-
-
-}

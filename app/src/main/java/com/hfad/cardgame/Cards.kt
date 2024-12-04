@@ -64,7 +64,6 @@ class Cards {
 
        val convertedNumber: Int? = convertTable[number]
 
-        Log.d(!"cards.kt", "Converted number: $convertedNumber")
         return convertedNumber ?: 0
     }
 
@@ -75,7 +74,7 @@ class Cards {
 
         randomizedDeck.clear() //clears the current deck
 
-        while(randomizedDeck.size < 52){
+        while(randomizedDeck.size+1 < 53){
             val randomCardNo = Random.nextInt(1, 53)
             if(!randomizedDeck.contains(randomCardNo)){                     //Card do not exist, add to deck
                 randomizedDeck.add(randomCardNo)

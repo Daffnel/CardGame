@@ -25,6 +25,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
 
 
+    viewModel.showCard()
 }
 
 
@@ -34,7 +35,7 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentCardsBinding.inflate(inflater, container, false)
         return binding.root
@@ -59,13 +60,13 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
 
 
         binding.btnLower.setOnClickListener {
-            viewModel.showCard()
+
             viewModel.buttonLow()
         }
 
         binding.btnHigher.setOnClickListener {
+
             viewModel.buttonHigh()
-            viewModel.showCard()
         }
     }
 

@@ -70,11 +70,11 @@ class Cards {
     /**
      * Makes a random deck of 52 cards. The numbers value is equalent in deck list
      */
-    fun randomizeCards() {
+    fun randomizeCards(number: Int) {
 
         randomizedDeck.clear() //clears the current deck
 
-        while(randomizedDeck.size+1 < 53){
+        while(randomizedDeck.size+1 < number){
             val randomCardNo = Random.nextInt(1, 53)
             if(!randomizedDeck.contains(randomCardNo)){                     //Card do not exist, add to deck
                 randomizedDeck.add(randomCardNo)

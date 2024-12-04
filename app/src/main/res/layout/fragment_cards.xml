@@ -47,15 +47,39 @@
         android:layout_marginTop="36dp"
         android:shadowColor="@color/black"
         android:shadowDx="2"
-        android:shadowDy="0"
-        android:shadowRadius="0"
+        android:shadowDy="6"
+        android:shadowRadius="5"
 
-        android:text="Next Card higer or lower value?"
+        android:text="@string/next_card_higher_or_lower_value"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivCard" />
+        app:layout_constraintTop_toBottomOf="@+id/ivCard"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:text="@string/guess_no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageView
+        android:id="@+id/ivRightOrWrongAnswer"
+        android:layout_width="57dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnLower"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toEndOf="@+id/btnHigher"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.161" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

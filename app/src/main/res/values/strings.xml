@@ -11,4 +11,6 @@
     <string name="lower">Lower</string>
     <string name="btn_higher">Higher</string>
     <string name="btn_Lower">Lower</string>
+    <string name="guess_no">Guess no:</string>
+    <string name="next_card_higher_or_lower_value">Next Card higher or lower value?</string>
 </resources>

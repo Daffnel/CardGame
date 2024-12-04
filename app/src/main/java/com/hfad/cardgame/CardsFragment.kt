@@ -53,9 +53,14 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
        viewModel.currentCard.observe(viewLifecycleOwner, Observer { cardResId ->
            cardResId?.let {
                binding.ivCard.setImageResource(it)
-
-           }
+                          }
        })
+
+        viewModel.answerImage.observe(viewLifecycleOwner, Observer { cardResId ->
+            cardResId?.let {
+                binding.ivRightOrWrongAnswer.setImageResource(it)
+            }
+        })
 
 
 

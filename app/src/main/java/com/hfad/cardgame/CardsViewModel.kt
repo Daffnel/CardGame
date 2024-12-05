@@ -11,28 +11,31 @@ class CardsViewModel : ViewModel() {
     val currentCard = MutableLiveData<Int>()
     val answerImage = MutableLiveData<Int>()
     val answerText = MutableLiveData<String>()
+
+    val noCorrectGuesses = MutableLiveData<Int>()
+    val noOfGuesses = MutableLiveData<Int>()
+    val noIncorrectGuesses = MutableLiveData<Int>()
+
+
     private val deck1 = Cards()
-    val game = Game("Hasse korthaj")
+
     val cardImages = deck1.deckImageRef
     val cards = deck1.randomizedDeck
-
-
-
 
 
     var cardCount = 0                       //kortleken startar på 0?
 
     init {
-        deck1.randomizeCards(52)             //Skapa en balndad kortlek
+        deck1.randomizeCards(52)    //Skapa en balndad kortlek
+        showCard()
     }
 
     fun showCard() {
         currentCard.value = cardImages[cards.indexOf(cardCount)]
         cardCount++
+   }
 
 
-
-    }
 
     /***
      * Change the icon depending on the answer
@@ -59,29 +62,37 @@ class CardsViewModel : ViewModel() {
 
             if (hiLoButton == "HI") {
                 if (firstCardInStack <= secondCardInStack) {   //equals makes a right answer
-                    game.correctGuesses++
+                    MainActivity.Game2Singelton.game2.correctGuesses++
                     showAnswerImage(true)
                 } else {
-                    game.wrongGuesses++
+                    MainActivity.Game2Singelton.game2.wrongGuesses++
                     showAnswerImage(false)
                 }
             }
             if (hiLoButton == "LO") {
                 if (firstCardInStack >= secondCardInStack) {
-                   game.correctGuesses++
+                   MainActivity.Game2Singelton.game2.correctGuesses++
                     showAnswerImage(true)
                 } else {
-                    game.wrongGuesses++
+                    MainActivity.Game2Singelton.game2.wrongGuesses++
                     showAnswerImage(false)
                 }
             }
             showCard()
-            game.NoGuesses++
+            MainActivity.Game2Singelton.game2.NoGuesses++
+            gameStatics()
         }
 
-        fun buttonHigh() {
-            checkGuesses("HI")
+    fun gameStatics() {
 
+        noCorrectGuesses.value = MainActivity.Game2Singelton.game2.correctGuesses
+        noOfGuesses.value = MainActivity.Game2Singelton.game2.NoGuesses
+        noIncorrectGuesses.value = MainActivity.Game2Singelton.game2.wrongGuesses
+    }
+
+    fun buttonHigh() {
+            checkGuesses("HI")
+            Log.d("Cards", MainActivity.Game2Singelton.game2.NoGuesses.toString())
         }
 
         fun buttonLow() {

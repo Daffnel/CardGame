@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="digtal_green">#2DB433</color>
+    <color name="text_backround">#0D0D0D</color>
 </resources>

@@ -1,12 +1,13 @@
 package com.hfad.cardgame
 
-data class Game (var player: String){
+import android.content.Context
 
-    var points: Int = 0
-    var draw: Int = 0
+data class Game (var player: String){
 
     var NoGuesses = 0
     var correctGuesses = 0
     var wrongGuesses = 0
+
+
 
 }

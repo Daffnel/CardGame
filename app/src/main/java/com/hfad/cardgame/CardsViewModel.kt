@@ -1,5 +1,6 @@
 package com.hfad.cardgame
 
+import android.content.Context
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
@@ -79,8 +80,18 @@ class CardsViewModel : ViewModel() {
             showCard()
             MainActivity.Game2Singelton.game2.NoGuesses++
             gameStatics()
-        }
 
+            if(cardCount == 52){
+
+                newGame()
+
+            }
+        }
+    private fun newGame() {
+        //Spara datan från tidigare spel
+
+
+    }
     private fun gameStatics() {
 
         noCorrectGuesses.value = MainActivity.Game2Singelton.game2.correctGuesses

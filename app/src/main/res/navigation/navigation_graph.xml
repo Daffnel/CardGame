@@ -18,5 +18,9 @@
         android:id="@+id/statsFragment"
         android:name="com.hfad.cardgame.StatsFragment"
         android:label="fragment_stats"
-        tools:layout="@layout/fragment_stats" />
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_statsFragment_to_cardsFragment"
+            app:destination="@id/cardsFragment" />
+    </fragment>
 </navigation>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.hfad.cardgame.databinding.FragmentStatsBinding
 import android.net.Uri
+import androidx.navigation.Navigation
 
 class StatsFragment : Fragment() {
 
@@ -24,7 +25,16 @@ class StatsFragment : Fragment() {
 
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         return binding.root
+
+
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+    binding.btnBack.setOnClickListener {
+
+        Navigation.findNavController(it).navigate(R.id.action_statsFragment_to_cardsFragment)
+    }
+    }
 }

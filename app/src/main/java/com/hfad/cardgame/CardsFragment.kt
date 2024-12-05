@@ -1,6 +1,7 @@
 package com.hfad.cardgame
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.hfad.cardgame.CardsViewModel
 import com.hfad.cardgame.databinding.FragmentCardsBinding
+import java.time.LocalDate
+import java.time.LocalTime
 
 
 class CardsFragment : Fragment() {
@@ -47,10 +50,12 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
     }
 
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "ShowToast")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         viewModel.showCard()
+
+
 
        // Live data for card image
        viewModel.currentCard.observe(viewLifecycleOwner, Observer { cardResId ->
@@ -77,7 +82,11 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
         viewModel.noOfGuesses.observe(viewLifecycleOwner, Observer { noOfGuesses ->
             noOfGuesses?.let {
                 binding.tvNoOfGuesses.text = "Number of guesses: $it"
-
+                if(viewModel.gameOver){                                                                     //If game over make a notice to player
+                    val toast = Toast.makeText(context, "Game Over!! press Hi or Lo button for a new game", Toast.LENGTH_LONG) //TODO lyft ut i egen method
+                    toast.show()
+                    saveData()
+                }
             }
         })
 
@@ -126,7 +135,30 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
 
             viewModel.buttonHigh()
         }
+
+
+        }
+
+    /***
+     * Saves the when a roaund is over
+     */
+    private fun saveData(){
+        val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+
+        val currentDate = LocalDate.now()                                                       //Time and date refrenc to highscore
+        val currentTime = LocalTime.now()
+
+
+        if (sharedPref != null) {
+            with(sharedPref.edit()) {
+                putString(MainActivity.Game2Singelton.game2.player,viewModel.noCorrectGuesses.value.toString() + ":" + viewModel.noIncorrectGuesses.value.toString()
+                        + ":" + currentDate.toString() + ":" + currentTime.toString())
+                apply()
+
+            }
+        }
     }
+
 
     override fun onDestroyView() {
 

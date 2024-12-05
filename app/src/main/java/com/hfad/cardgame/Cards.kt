@@ -8,7 +8,7 @@ class Cards {
     var  randomizedDeck = mutableSetOf<Int>()
 
 
-//tabel to hold information on suite and value in the order 1 to 52 Spades, hearts, diamonds, clubs 
+//table to hold information on suite and value in the order 1 to 52 Spades, hearts, diamonds, clubs
     val deck = mapOf(1 to "ace of spades",2 to "two of spades",3 to "three of spades",4 to "Four of spades",
         5 to "five of spades",6 to "six of spades",7 to "seven of spades",8 to "eight of spades",
         9 to "nine of spades",10 to "ten of spades",11 to "jack of spades",12 to "queen of spades",
@@ -33,7 +33,7 @@ class Cards {
 //table to convert the "deck's" 1 to 52 to the respective suites value
 
     val convertTable: Map<Int,Int> = mapOf(1 to 1,2 to 2, 3 to 3,4 to 4, 5 to 5, 6 to 6, 7 to 7, 8 to 8,
-    9 to 9, 10 to 10, 11 to 11, 12 to 12, 13 to 13,14 to 1, 15 to 2, 16 to 3, 17 to 4, 18 to 5, 19 to 6,
+    9 to 9, 10 to 10, 11 to 11, 12 to 12, 13 to 13, 14 to 1, 15 to 2, 16 to 3, 17 to 4, 18 to 5, 19 to 6,
     20 to 7, 21 to 8, 22 to 9, 23 to 10, 24 to 11, 25 to 12, 26 to 13, 27 to 1, 28 to 2, 29 to 3, 30 to 4,
     31 to 5, 32 to 6, 33 to 7, 34 to 8, 35 to 9, 36 to 10, 37 to 11, 38 to 12, 39 to 13,
     40 to 1, 41 to 2, 42 to 3, 43 to 4, 44 to 5, 45 to 6, 46 to 7, 47 to 8, 48 to 9, 49 to 10,
@@ -53,7 +53,7 @@ class Cards {
         41 to R.drawable.two_of_clubs,42 to R.drawable.three_of_clubs,43 to R.drawable.four_of_clubs,
         44 to R.drawable.five_of_clubs,45 to R.drawable.six_of_clubs,46 to R.drawable.seven_of_clubs,47 to R.drawable.eight_of_clubs,
         48 to R.drawable.nine_of_clubs,49 to R.drawable.ten_of_clubs,50 to R.drawable.jack_of_clubs2,51 to R.drawable.queen_of_clubs2,
-        52 to R.drawable.king_of_clubs2)
+        52 to R.drawable.wrong_answer,99 to R.drawable.wrong_answer)
 
 
     /**

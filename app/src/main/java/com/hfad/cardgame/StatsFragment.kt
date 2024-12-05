@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.hfad.cardgame.databinding.FragmentStatsBinding
-import android.net.Uri
 import androidx.navigation.Navigation
 
 class StatsFragment : Fragment() {

@@ -6,7 +6,7 @@ import kotlin.random.Random
 class Cards {
 
     var  randomizedDeck = mutableSetOf<Int>()
-    var  usedCards = mutableSetOf<Int>()
+
 
 //tabel to hold information on suite and value in the order 1 to 52 Spades, hearts, diamonds, clubs 
     val deck = mapOf(1 to "ace of spades",2 to "two of spades",3 to "three of spades",4 to "Four of spades",
@@ -68,7 +68,7 @@ class Cards {
     }
 
     /**
-     * Makes a random deck of 52 cards. The numbers value is equalent in deck list
+     * Makes a random deck of 52 cards. The numbers value is equivalent in deck list
      */
     fun randomizeCards(number: Int) {
 
@@ -91,19 +91,5 @@ class Cards {
 
     }
 
-    /**
-     *  Get the correct name for the card by its number
-     */
-    fun  getCardName(number: Int): String{
-
-            val card: String? = deck[number]
-
-            return card.toString()
-        }
-
-    fun  usedCards(number: Int) {
-
-     randomizedDeck.remove(number)
-    }
 
 }

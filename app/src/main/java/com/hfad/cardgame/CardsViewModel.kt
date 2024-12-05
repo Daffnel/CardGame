@@ -1,10 +1,8 @@
 package com.hfad.cardgame
 
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import kotlin.random.Random
+
 
 class CardsViewModel : ViewModel() {
 
@@ -19,14 +17,14 @@ class CardsViewModel : ViewModel() {
 
     private val deck1 = Cards()
 
-    val cardImages = deck1.deckImageRef
-    val cards = deck1.randomizedDeck
+    private val cardImages = deck1.deckImageRef
+    private val cards = deck1.randomizedDeck
 
 
-    var cardCount = 0                       //kortleken startar på 0?
+    private var cardCount = 0
 
     init {
-        deck1.randomizeCards(52)    //Skapa en balndad kortlek
+        deck1.randomizeCards(52)    //Skapa en blandad kortlek
         showCard()
     }
 
@@ -40,7 +38,7 @@ class CardsViewModel : ViewModel() {
     /***
      * Change the icon depending on the answer
      */
-    fun showAnswerImage(answer: Boolean) {
+    private fun showAnswerImage(answer: Boolean) {
 
         when (answer) {
             true -> {
@@ -52,13 +50,13 @@ class CardsViewModel : ViewModel() {
         }
         }
 
-        fun checkGuesses(hiLoButton: String) {  // HI = for high button LO= for low button Return Boolean for right or wrong answer
+        private fun checkGuesses(hiLoButton: String) {  // HI = for high button LO= for low button Return Boolean for right or wrong answer
 
             val firstCardInStack =
                 deck1.convertNumber(cards.indexOf(cardCount - 1)) //-1 because showCard() is one card ahead
             val secondCardInStack = deck1.convertNumber(cards.indexOf(cardCount))
 
-            var answer = false
+
 
             if (hiLoButton == "HI") {
                 if (firstCardInStack <= secondCardInStack) {   //equals makes a right answer
@@ -83,16 +81,16 @@ class CardsViewModel : ViewModel() {
             gameStatics()
         }
 
-    fun gameStatics() {
+    private fun gameStatics() {
 
         noCorrectGuesses.value = MainActivity.Game2Singelton.game2.correctGuesses
         noOfGuesses.value = MainActivity.Game2Singelton.game2.NoGuesses
         noIncorrectGuesses.value = MainActivity.Game2Singelton.game2.wrongGuesses
     }
 
-    fun buttonHigh() {
+        fun buttonHigh() {
             checkGuesses("HI")
-            Log.d("Cards", MainActivity.Game2Singelton.game2.NoGuesses.toString())
+
         }
 
         fun buttonLow() {

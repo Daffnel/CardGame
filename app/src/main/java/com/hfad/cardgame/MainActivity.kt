@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var userNameTextView: TextView
 
     object Game2Singelton {
-       var game2 = Game("")
-   }
+        var game2 = Game("")    // Set up a new game
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,63 +27,56 @@ class MainActivity : AppCompatActivity() {
 
         val newGameButton = findViewById<Button>(R.id.btNewGame)
         val loginButton = findViewById<Button>(R.id.btUserName)
+        val aboutButton = findViewById<Button>(R.id.btAboutTheGame)
         userNameTextView = findViewById<TextView>(R.id.tvUserName)
 
 
 
 
         newGameButton.setOnClickListener {
-
-             val intent = Intent(this, GameActivity::class.java)
-
-                startActivity(intent)
-
+            val intent = Intent(this, GameActivity::class.java)
+            startActivity(intent)
         }
-
 
         loginButton.setOnClickListener {
-
             loginPopUp()
+        }
 
-
+        aboutButton.setOnClickListener {
+            val intent = Intent(this, AboutActivty::class.java)
+            startActivity(intent)
         }
 
 
-
     }
 
 
-fun loginPopUp(){
+    fun loginPopUp() {
 
-   val userNameForm = Dialog(this)
+        val userNameForm = Dialog(this)
 
-    userNameForm.setContentView(R.layout.login_pop_up)
-    userNameForm.setCancelable(false)
+        userNameForm.setContentView(R.layout.login_pop_up)
+        userNameForm.setCancelable(false)
 
-    val buttonOK = userNameForm.findViewById<Button>(R.id.btOk)
-    val userName = userNameForm.findViewById<EditText>(R.id.etUserName)
+        val buttonOK = userNameForm.findViewById<Button>(R.id.btOk)
+        val userName = userNameForm.findViewById<EditText>(R.id.etUserName)
 
+        userNameForm.show()
 
-    userNameForm.show()
+        buttonOK.setOnClickListener {
 
+            Game2Singelton.game2.player = userName.text.toString()
 
+            updateName(userName.text.toString())
 
-    buttonOK.setOnClickListener {
+            userNameForm.dismiss()
 
-
-        Game2Singelton.game2.player = userName.text.toString()
-
-        updateName(userName.text.toString())
-
-        userNameForm.dismiss()
+        }
 
     }
 
-    //name.text = "hello"
-}
-
-    fun updateName(userName: String){
-        this.userNameTextView.text =  "hello my friend " + userName
-     }
+    fun updateName(userName: String) {
+        this.userNameTextView.text = "hello my friend " + userName
+    }
 
 }

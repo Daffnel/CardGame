@@ -15,10 +15,17 @@
     <string name="next_card_higher_or_lower_value">Next Card higher or lower?</string>
     <string name="namn">Gamer name:</string>
     <string name="ok">OK</string>
-    <string name="not_logged_in_yet">Not logged in yet</string>
+    <string name="not_logged_in_yet">Not logged in yet!!</string>
     <string name="number_og_guesses">Number of guesses: 0</string>
     <string name="correct_guesses">Correct guesses: 0</string>
     <string name="correct_guesses_0">Correct guesses: 0</string>
     <string name="wrong_guesses_0">Wrong guesses: 0</string>
     <string name="incorrect_guesses_0">Incorrect Guesses: 0</string>
+    <string name="about_text">Ett litet spel gjort av Daniel A i kursem Android grunder\n Ess räknas som 1 och lika kort ger poäng</string>
+    <string name="home">HOME</string>
+    <string name="btn_home">Home</string>
+    <string name="home_button">Home</string>
+    <string name="Highscore">Home</string>
+    <string name="high_score">High-score</string>
+    <string name="exit">Exit</string>
 </resources>

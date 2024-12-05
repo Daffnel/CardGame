@@ -20,22 +20,68 @@
     android:layout_marginBottom="8dp"/>
 
 
- <androidx.constraintlayout.widget.ConstraintLayout
-     android:layout_width="match_parent"
-     android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
-     <androidx.fragment.app.FragmentContainerView
-         android:id="@+id/fragmentContainerView2"
-         android:name="com.hfad.cardgame.CardsFragment"
-         android:layout_width="394dp"
-         android:layout_height="718dp"
-         app:layout_constraintBottom_toBottomOf="parent"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toTopOf="parent"
-         app:layout_constraintVertical_bias="0.153" />
- </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btStat"
+            style="?attr/materialButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/high_score"
+            app:elevation="2dp"
+            app:icon="@drawable/ic_stat"
+            app:iconTint="#C17235"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btExit"
+            app:layout_constraintEnd_toStartOf="@+id/btExit"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btHome" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btHome"
+            style="?attr/materialButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Highscore"
+            app:elevation="2dp"
+            app:icon="@drawable/ic_home"
+            app:iconTint="#C17235"
+
+            app:layout_constraintBaseline_toBaselineOf="@+id/btStat"
+            app:layout_constraintEnd_toStartOf="@+id/btStat"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/exit"
+            app:icon="@drawable/ic_exit"
+            app:elevation="2dp"
+            app:iconTint="#C17235"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btStat" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView2"
+            android:name="com.hfad.cardgame.CardsFragment"
+            android:layout_width="394dp"
+            android:layout_height="718dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.153"
+            tools:layout="@layout/fragment_cards" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

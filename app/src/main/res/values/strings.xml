@@ -28,4 +28,8 @@
     <string name="Highscore">Home</string>
     <string name="high_score">High-score</string>
     <string name="exit">Exit</string>
+    <string name="nav">Nav</string>
+    <string name="home_from_cards_fragments">Home</string>
+    <string name="high_score_cards_fragment">High score</string>
+    <string name="exit_from_cards_fragment">Exit</string>
 </resources>

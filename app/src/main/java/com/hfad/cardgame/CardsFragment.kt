@@ -1,6 +1,7 @@
 package com.hfad.cardgame
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import com.hfad.cardgame.CardsViewModel
 import com.hfad.cardgame.databinding.FragmentCardsBinding
 
@@ -29,9 +31,6 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
 
 
 }
-
-
-
 
 
     override fun onCreateView(
@@ -98,7 +97,26 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
         })
 
 
-        //Buttons for guessing
+        //Buttons and stuff
+
+        binding.btnStats.setOnClickListener{
+
+            Navigation.findNavController(it).navigate(R.id.action_cardsFragment_to_statsFragment)
+
+        }
+
+        // Back to home screen
+        binding.btnHome.setOnClickListener {
+            val intet = Intent(activity, MainActivity::class.java)
+            startActivity(intet)
+        }
+
+        //exit the app
+
+        binding.btnExit.setOnClickListener {
+            activity?.finishAffinity()
+        }
+
         binding.btnLower.setOnClickListener {
 
             viewModel.buttonLow()

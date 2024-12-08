@@ -84,7 +84,7 @@ class CardsViewModel : ViewModel() {
                 }
             }
 
-            if(cardCount == 14){  //Todo change to 51
+            if(cardCount == 51){  //Todo change to 51
 
                gameOver = true
                 newGame()
@@ -105,14 +105,7 @@ class CardsViewModel : ViewModel() {
         cardCount = 0
         deck1.randomizeCards(52)
 
-       // val saveData = Data(view)
-
-        //saveData.saveData("name", MainActivity.Game2Singelton.game2.player)
-        //saveData.saveData(MainActivity.Game2Singelton.game2.player, MainActivity.Game2Singelton.game2.correctGuesses.toString())
-        //saveData.saveData(MainActivity.Game2Singelton.game2.player, MainActivity.Game2Singelton.game2.wrongGuesses.toString())
-
-
-        //Spara datan
+       gameOver = false
 
         MainActivity.Game2Singelton.game2.correctGuesses = -1               //-1 it makes it work
         MainActivity.Game2Singelton.game2.wrongGuesses = 0

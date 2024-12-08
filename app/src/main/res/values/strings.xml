@@ -21,7 +21,7 @@
     <string name="correct_guesses_0">Correct guesses: 0</string>
     <string name="wrong_guesses_0">Wrong guesses: 0</string>
     <string name="incorrect_guesses_0">Incorrect Guesses: 0</string>
-    <string name="about_text">Ett litet spel gjort av Daniel A i kursem Android grunder\n Ess räknas som 1 och lika kort ger poäng</string>
+    <string name="about_text">Ett litet spel gjort av Daniel A i kursen Androidutveckling\n Ess räknas som 1 och lika kort ger poäng</string>
     <string name="home">HOME</string>
     <string name="btn_home">Home</string>
     <string name="home_button">Home</string>
@@ -32,4 +32,7 @@
     <string name="home_from_cards_fragments">Home</string>
     <string name="high_score_cards_fragment">High score</string>
     <string name="exit_from_cards_fragment">Exit</string>
+    <string name="tillbaka">Tillbaka</string>
+    <string name="h_r_kommer_det_bli_en_high_score_lista_och_lite_till">Här kommer det bli en High-Score lista och lite till</string>
+    <string name="ett_spel_gjort_av_daniel_a_n_n_reglerna_r_enkla_ess_r_lika_med_1_och_lika_kort_ger_po_ng">Ett spel gjort av Daniel A \n\n Reglerna är enkla Ess är lika med 1 och lika kort ger poäng.</string>
 </resources>

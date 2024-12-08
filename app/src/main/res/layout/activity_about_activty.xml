@@ -16,7 +16,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_home" />
+        app:srcCompat="@drawable/ic_home"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"
@@ -26,7 +27,8 @@
         android:ems="10"
         android:gravity="start|top"
         android:textSize="18sp"
-        android:text="Ett spel gjort av Daniel A \n\n Reglerna är enkla Ess är lika med 1 och lika kort ger poäng."
+        android:text="@string/ett_spel_gjort_av_daniel_a_n_n_reglerna_r_enkla_ess_r_lika_med_1_och_lika_kort_ger_po_ng"
+
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/btStat"
         app:layout_constraintEnd_toEndOf="parent"

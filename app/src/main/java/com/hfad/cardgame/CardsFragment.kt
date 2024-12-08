@@ -140,7 +140,7 @@ viewModel = ViewModelProvider(this)[CardsViewModel::class.java]
         }
 
     /***
-     * Saves the when a roaund is over
+     * Saves the when a round is over
      */
     private fun saveData(){
         val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
